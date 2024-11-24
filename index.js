@@ -7,7 +7,7 @@ const appSettings = {
 
 const app = initializeApp(appSettings)
 const database = getDatabase(app) 
-const InDB = shoppingListInDB = ref(database, "shoppingList")
+const shoppingListInDB = ref(database, "shoppingList")
 
 const inputFieldEl = document.getElementById("input-field")
 const addButtonEl = document.getElementById("add-button")
@@ -18,13 +18,10 @@ addButtonEl.addEventListener("click", function() {
     push(shoppingListInDB, inputValue)
 
     clearInputField()
-
-    appendItemToShoppingListEl(itemValue)
     
 })
 
-onValue(shoppingListInDB, function(snapshot) {
-
+onValue (shoppingListInDB, function(snapshot) {
     if (snapshot.exists()) {
         let itemsArray = Object.values(snapshot.val())
 
@@ -35,13 +32,11 @@ onValue(shoppingListInDB, function(snapshot) {
             let currentItemID = currentItem[0]
             let currentItemValue = currentItem[1]
 
-            appendItemToShoppingListEl(itemsArray[i])
+            appendItemToShoppingListEl(currentItem)
         }
-
     } else {
         shoppingListEl.innerHTML = "No items here... yet"
-    }
-    
+    } 
 })
 
 function clearShoppingListEl() {
@@ -68,3 +63,4 @@ function appendItemToShoppingListEl(item) {
 
     shoppingListEl.append(newEl)
 }
+console.log(bread)
