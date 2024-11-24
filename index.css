@@ -1,10 +1,10 @@
 html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Caveat', sans-serif;
     background-color: #eef0f4;
     color: #793c04;
-
+    user-select: none;
 }
 
 .container {
@@ -15,22 +15,19 @@ html, body {
 }
 
 img {
-    margin-left: auto;
-    margin-right: auto;
-    width: auto;
-    height: auto;
-    border-radius: 8px;
+    width: 150px;
+    margin: 0 auto;
     
 }
 
 input {
     color: #793c04;
     background-color: #dce1eb;
-    text-align: center;
     border: none;
     border-radius: 8px;
     padding: 10px 30px;
     font-size: 30px;
+    text-align: center;
     font-family: 'Caveat', sans-serif;
     margin: 10px 0;
 }
@@ -59,10 +56,11 @@ ul {
 }
 
 ul li {
+    font-size: 20px;
     background-color: #f3c348;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0px 1px 4px rbga (0, 0, 0, 0.2);
+    box-shadow: 0px 1px 4px rgba (0, 0, 0, 0.2);
     flex-grow: 1;
     text-align: center;
 }
